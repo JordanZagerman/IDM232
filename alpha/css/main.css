@@ -1,31 +1,15 @@
 :root {
-  --link-color: #fff;
-  --link-hover-color: #ccc;
   --wrapper-margin: 1em;
   --x-padding: 1.3em;
 }
 
-@media screen and (min-width: 650px) {
-  #wrapper {
-    grid-template-areas: "a a a a"
-                         "b b b b"
-                         "c d d d";
-    
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: auto minmax(350px, 1fr) auto;
-  }
-}
 
-@media screen and (max-width: 649px) {
-  #wrapper {
-    grid-template-areas: "a a a a"
-                         "b b b b"
-                         "c c c c"
-                         "d d d d";
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: auto minmax(350px, 1fr) auto auto;
-  }
-}
+
+/*
+* {
+    border-style: solid;
+    border-color: green;
+}*/
 
 body {
   font-family: sans-serif;
@@ -48,10 +32,40 @@ a:hover {
   color: var(--link-hover-color);
 }
 
+/*-----------------Search-----------------*/
+
+
+#search {
+  width: 100%;
+  height: 40px;
+}
+
+.searchTerm {
+  float: right;
+  width: 75%;
+  padding: 5px;
+  height: 28px;
+  outline: none;
+}
+
+.searchButton {
+  width: 10%;
+  height: 100%;
+  text-align: center;
+  background-color: green;
+  cursor: pointer;
+  font-size: 20px;
+  float: right;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 60%;
+}
+
 #nav {
   grid-area: a;
   background-color: #000;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   padding: var(--x-padding);
   display: flex;
   align-items: center;
@@ -63,6 +77,8 @@ a:hover {
 #logo {
   text-transform: uppercase;
 }
+
+/*---------------------------------*/
 
 #menu li {
   display: inline-block;
@@ -100,6 +116,8 @@ a:hover {
   padding: .4em 0;
 }
 
+
+
 #posts {
   grid-area: d;
   display: grid;
@@ -120,6 +138,38 @@ a:hover {
   background-color: #444;
 }
 
+/*Recipe*/
+#recipe {
+  grid-area: b;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: #000;
+}
+
+/*Search Results*/
+
+#results {
+  grid-area: b;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: #000;
+}
+.result {
+  background-color: #000;
+  padding: var(--x-padding);
+}
+
+.result:nth-child(even) {
+  background-color: #666;
+}
+
+.result:nth-child(odd) {
+  background-color: #444;
+}
+
+
+
+
 #footer {
   background-color: #000;
   display: flex;
@@ -130,4 +180,53 @@ a:hover {
 
 h2 {
   margin-top: 0;
+}
+
+@media screen and (max-width: 575px) {
+  #nav {
+    display: block;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  #logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .searchTerm {
+  float: left;
+  }
+
+
+  #wrapper {
+    min-width: 320px;
+  }
+  .wrap {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #wrapper {
+    grid-template-areas: "a a a a"
+                         "b b b b"
+                         "c d d d";
+    
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto minmax(350px, 1fr) auto;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  #wrapper {
+    grid-template-areas: "a a a a"
+                         "b b b b"
+                         "c c c c"
+                         "d d d d";
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto minmax(350px, 1fr) auto auto;
+  }
 }
