@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Single Project</title>
-</head>
-<body>
-	<h1>Challenge</h1>
-	<p>Program this page to read the data for the selected project and display the info.</p>
-</body>
-</html>
+<?php
+	$idoffood = $_GET['id'];
+
+	
+	
+	
+	echo $idoffood
+
+
+?>

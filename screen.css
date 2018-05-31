@@ -1,13 +1,13 @@
 * {
   box-sizing: border-box;
 }
-
+ 
 html {
   font-size: 100%;
 }
 
 body {
-  background-color: lightgray;
+  background-color: white;
   font: 100%/1.5 sans-serif;
 }
 
@@ -24,7 +24,7 @@ figcaption {
 }
 
 p {
-
+  font-size: 50%;
 }
 
 .grid {
@@ -60,3 +60,4 @@ p {
     margin: 0;
   }
 }
+
