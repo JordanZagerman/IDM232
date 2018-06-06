@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  border-style: solid;
+  border-color: aqua;
 }
  
 html {
@@ -11,6 +13,8 @@ body {
   font: 100%/1.5 sans-serif;
 }
 
+/* ---- IMAGES -------- IMAGES -------- IMAGES -------- IMAGES ---- */
+
 img {
   max-width: 100%;
 }
@@ -19,9 +23,16 @@ figure {
   margin: 0;
 }
 
+/* ---- TEXT -------- TEXT -------- TEXT -------- TEXT -------- TEXT ---- */
+
+/* Homepage Captions */
 figcaption {
   font-weight: bold;
 }
+
+/* .single-caption {
+
+} */
 
 p {
   font-size: 50%;
@@ -40,19 +51,11 @@ p {
   background-color: white;
 }
 
-.project {
-  /* Demo-Specific Styles */
-  background: #eaeaea;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  
-  /* Flex Fallback */
-  margin-left: 5px;
-  margin-right: 5px;
-  flex: 1 1 200px;
+.single {
+  background-color: white;
 }
+
+
 
 /* If Grid is supported, remove the margin we set for the fallback */
 @supports (display: grid) {
