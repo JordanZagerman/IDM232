@@ -42,28 +42,52 @@
 	<div class="single">
 
 		<div class="singleview">
-		<figure class="single-img" >
-				<img src="<?php echo $item['title_image']; ?>" alt="<?php echo $row['name']; ?>">
+		<!--   DISH TITLE      DISH TITLE      DISH TITLE      DISH TITLE      DISH TITLE   -->
+			<h1 class='single-caption'>
+				<?php echo $item['title']; ?>
+	</h1>
 
-				<!-- Caption is the title -->
-				<figcaption class='single-caption'>
-					<?php echo $item['title']; ?>
 
-					<figcaption class='single-caption'>
+		<!--  TITLE IMAGE    TITLE IMAGE    TITLE IMAGE    TITLE IMAGE    TITLE IMAGE    TITLE IMAGE  -->
+				<img class="single-title-image" src="<?php echo $item['title_image']; ?>" alt="<?php echo $row['name']; ?>">
+
+
+				<!-- SUB TITLE    SUB TITLE    SUB TITLE    SUB TITLE    SUB TITLE    SUB TITLE     -->
+					<h2 class='single-caption-subtitle'>
 						<?php echo $item['subtitle']; ?>
+	</h2>
+					<break>
+					<break>
+				<!-- center wrapper div -->
+				<div>
+					<h3 class="ingredients-title">Ingredients</h3>
 
-				</figcaption>
-		</figure>
+					<!-- INGREDIENT IMAGE     INGREDIENT IMAGE     INGREDIENT IMAGE     INGREDIENT IMAGE     -->
+					<img class="single-image-ingredient" src="<?php echo $item['ingredient_image']; ?>" alt="<?php echo $row['name']; ?>">
 
-		<figure class="single-img-ingredient" >
-				<img src="<?php echo $item['ingredient_image']; ?>" alt="<?php echo $row['name']; ?>">
-
-				<!-- Caption is the title -->
-				<figcaption class='ingredient-caption'>
+				</div>
+				<!--      INGREDIENTS CAPTION     INGREDIENTS CAPTION     INGREDIENTS CAPTION     INGREDIENTS CAPTION    -->
+				<p class='single-ingredient-caption'>
 					<?php echo $item['ingredient_description']; ?>
+				</p>
 
-				</figcaption>
-		</figure>
+			<!-- DESCRIPTIONS      DESCRIPTIONS      DESCRIPTIONS      DESCRIPTIONS      DESCRIPTIONS      -->
+			<p class=item-description>
+				<?php echo $item['a_description']; ?>
+			</p>
+
+			<!-- INSTRUCTIONS     INSTRUCTIONS     INSTRUCTIONS     INSTRUCTIONS       -->
+			<div>
+			<ul class="instructions-list">
+				<li><?php echo $item['instructions_1']; ?><li>
+				<li><?php echo $item['instructions_2']; ?><li>
+				<li><?php echo $item['instructions_3']; ?><li>
+				<li><?php echo $item['instructions_4']; ?><li>
+				<li><?php echo $item['instructions_5']; ?><li>
+				<li><?php echo $item['instructions_6']; ?><li>
+			</ul>
+			</div>
+
 		</div>
 
 		<?php

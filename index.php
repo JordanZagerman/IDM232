@@ -32,7 +32,15 @@
 <body>
 
 	<!-- PUT A NAV / HEADER HERE -->
-
+	<nav>
+		<a href="index.php">HOME</a>
+		<break>
+  		<a href="help.php">HELP</a>
+		<form class="search-bar" action="search.php" method="POST">
+			<input type="text" name="search" placeholder="Search....">
+			<button type="submit" name="submit-search">Search</button>
+		</form>
+	</nav>
 
 	<!-- Will Use CSS Grid -->
 	<div class="grid">
@@ -47,19 +55,18 @@
 			<div class="homepage-view">
 
 				<!-- Using php to echo rows, alt tag is the name-->
-				<figure>
+				<figure class="figure-home">
 					<img src="<?php echo $row['title_image']; ?>" alt="<?php echo $row['name']; ?>">
 
 					<!-- Caption is the title -->
 					<figcaption>
 						<?php echo $row['title']; ?>
-
 					</figcaption>
 				</figure>
 
-				<p>
-					<?php echo $row['description']; ?></p>
-				<p>
+				<p class='home-description'>
+					<?php echo $row['a_description']; ?></p>
+				<p class=read-more>
 					<!-- Grab ID -->
 					<a href="single.php?id=<?php echo $row['id']; ?>">Read More&hellip;</a>
 				</p>

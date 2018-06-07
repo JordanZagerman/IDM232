@@ -13,6 +13,15 @@ body {
   font: 100%/1.5 sans-serif;
 }
 
+.single {
+  margin: auto;
+}
+
+.singleview {
+  margin: auto;
+}
+
+
 /* ---- IMAGES -------- IMAGES -------- IMAGES -------- IMAGES ---- */
 
 img {
@@ -23,6 +32,34 @@ figure {
   margin: 0;
 }
 
+.single-title-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.single-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.single-image-ingredient {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+
+/* ---- IMAGES END ---- IMAGES END ---- IMAGES END ---- IMAGES END ---- IMAGES END ---- IMAGES END ----*/
+
+
+
+
 /* ---- TEXT -------- TEXT -------- TEXT -------- TEXT -------- TEXT ---- */
 
 /* Homepage Captions */
@@ -30,13 +67,58 @@ figcaption {
   font-weight: bold;
 }
 
-/* .single-caption {
-
-} */
-
-p {
+.home-description {
   font-size: 50%;
 }
+
+.single-caption {
+  text-align: center;
+}
+
+.single-caption-subtitle {
+  text-align: center;
+}
+
+.single-ingredient-caption {
+  text-align: center;
+}
+
+.ingredients-title {
+  text-align: center;
+}
+
+.item-description {
+  text-align: center;
+  font-size: 100%;
+}
+
+.instructions-list {
+  margin: auto;
+}
+
+/* ----TEXT END--------TEXT END--------TEXT END--------TEXT END--------TEXT END---- */
+
+
+
+/* ----Search--------Search--------Search--------Search--------Search---- */
+
+input {
+  padding: 0px 20px;
+  width: 300px;
+  height: 40px;
+  font-size: 22px;
+}
+
+button {
+  width: 100px;
+  height: 44px;
+  font-size: 22px;
+}
+
+/* SEARCH END ----- SEARCH END ----- SEARCH END ----- SEARCH END ----- SEARCH END ----- */
+
+
+
 
 .grid {
   /* Grid Fallback */
