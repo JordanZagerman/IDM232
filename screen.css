@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   border-style: solid;
+  border-width: 1px;
   border-color: aqua;
 }
  
@@ -10,7 +11,24 @@ html {
 
 body {
   background-color: white;
-  font: 100%/1.5 sans-serif;
+  font: 100%/1.5;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.wrapper {
+  margin: 1%;
+}
+
+/* wifth of the reading section */
+.single-wrapper {
+  max-width: 700px;
+  margin: auto;
+}
+
+.navigation {
+  margin: auto;
+  height: 45px;
 }
 
 .single {
@@ -20,15 +38,51 @@ body {
 .singleview {
   margin: auto;
 }
+/* HEADER  */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:white;
+}
 
+li {
+  float: left;
+}
 
+li a {
+  display: block;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: red;
+}
+
+a:hover {
+  color: red;
+
+}
+
+.homepage-view {
+  margin: 0;
+  padding: 0;
+}
 /* ---- IMAGES -------- IMAGES -------- IMAGES -------- IMAGES ---- */
 
 img {
   max-width: 100%;
 }
 
-figure {
+.image-home {
+  width: 100%
+}
+
+.food-home {
   margin: 0;
 }
 
@@ -50,7 +104,7 @@ figure {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
 }
 
 
@@ -70,6 +124,9 @@ figcaption {
 .home-description {
   font-size: 50%;
 }
+
+
+
 
 .single-caption {
   text-align: center;
@@ -104,7 +161,7 @@ figcaption {
 
 input {
   padding: 0px 20px;
-  width: 300px;
+  width: 80%;
   height: 40px;
   font-size: 22px;
 }
@@ -113,6 +170,7 @@ button {
   width: 100px;
   height: 44px;
   font-size: 22px;
+  background-color: white;
 }
 
 /* SEARCH END ----- SEARCH END ----- SEARCH END ----- SEARCH END ----- SEARCH END ----- */
@@ -146,3 +204,46 @@ button {
   }
 }
 
+
+@media screen and (min-width : 1px) and (max-width: 320px){
+
+    /* SEARCH */
+  input {
+    padding: 0px 20px;
+    width: 50%;
+    height: 40px;
+    font-size: 12px;
+  }
+  
+  button {
+    width: 60px;
+    height: 50px;
+    font-size: 8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrapper {
+    margin: 0;
+  }
+
+  }
+  
+  /*Tablet*/
+  @media screen and (min-width : 321px) and (max-width: 768px) {
+
+    /* SEARCH */
+    input {
+      padding: 0px 20px;
+      width: 60%;
+      height: 40px;
+      font-size: 22px;
+    }
+  }
+  
+  
+  /*Desktop*/
+  @media screen and (min-width : 769px) {
+  
+  
+  }

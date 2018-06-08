@@ -20,7 +20,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Black Apron</title>
-	<link rel="stylesheet" href="screen.css">
+    <link rel="stylesheet" href="screen.css">
+	<link rel="stylesheet" href="normalize.css">
 </head>
 <body>
 
@@ -43,13 +44,16 @@
             $table = "projects";
             $search_text = $_POST['search'];
 
+            $search_text = strtolower($search_text);
+
             // $search = mysql_real_escape_string('$search_text'  );
             
+        
+            $sql = "SELECT * FROM $table
+            WHERE title LIKE '%$search_text%'
+            OR subtitle LIKE '%$search_text%'
+            OR a_description LIKE '%$search_text%'
             
-            $sql = "SELECT * 
-            FROM {$table} 
-            WHERE title = '$search_text' 
-            OR a_description = '$search_text'
             ";
    
             $result = mysqli_query($connection, $sql);

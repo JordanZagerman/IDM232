@@ -39,13 +39,24 @@
 <body>
 	
 	<!-- Different grid class for wider scalable view -->
-	<div class="single">
+
 
 		<div class="singleview">
+			<ul class="navigation">
+				<li><a href="index.php">HOME</a></li>
+				<li><a class=help-link href="help.php">HELP</a></li>
+			</ul>
+
+			<form class="search-bar" action="search.php" method="POST">
+					<input type="text" name="search" placeholder="Search....">
+					<button type="submit" name="submit-search">Search</button>
+			</form>
+
+			<div class="single-wrapper">
 		<!--   DISH TITLE      DISH TITLE      DISH TITLE      DISH TITLE      DISH TITLE   -->
 			<h1 class='single-caption'>
 				<?php echo $item['title']; ?>
-	</h1>
+			</h1>
 
 
 		<!--  TITLE IMAGE    TITLE IMAGE    TITLE IMAGE    TITLE IMAGE    TITLE IMAGE    TITLE IMAGE  -->
@@ -55,7 +66,7 @@
 				<!-- SUB TITLE    SUB TITLE    SUB TITLE    SUB TITLE    SUB TITLE    SUB TITLE     -->
 					<h2 class='single-caption-subtitle'>
 						<?php echo $item['subtitle']; ?>
-	</h2>
+					</h2>
 					<break>
 					<break>
 				<!-- center wrapper div -->
