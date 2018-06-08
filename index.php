@@ -19,60 +19,45 @@
 	}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Off White Apron</title>
-	<link rel="stylesheet" href="screen.css">
-	<link rel="stylesheet" href="normalize.css">
-</head>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head><?php require "header.php";?>
+		<title>Off White Apron</title>
+	</head>
 
-<body>
-	<div class="wrapper">
-		<!-- PUT A NAV / HEADER HERE -->
-		<ul class="navigation">
-			<li><a href="index.php">HOME</a></li>
-			<li><a class=help-link href="help.php">HELP</a></li>
-		</ul>
+	<body>
+		<div class="wrapper">
+			<!-- HEADER NAVIGATION SEARCH-->
+			<?php require "navigation.php";?>
+			<!-- Will Use CSS Grid -->
+			<div class="grid">
 
-		<form class="search-bar" action="search.php" method="POST">
-				<input type="text" name="search" placeholder="Search....">
-				<button type="submit" name="submit-search">Search</button>
-		</form>
-		<!-- Will Use CSS Grid -->
-		<div class="grid">
 
-			
-			<?php
+				<?php
 				// Whhatever result came back one, row at a time do the following
 				while ($row = mysqli_fetch_assoc($result)) {
 			?>
 
-				<!-- Each project will inculde a figure image and caption -->
-				<div class="homepage-view">
-
-					<!-- Using php to echo rows, alt tag is the name-->
-					<div class="food-home">
-						<img class = "image-home" src="<?php echo $row['title_image']; ?>" alt="<?php echo $row['name']; ?>">
-
+					<!-- Each project will inculde a figure image and caption -->
+					<div class="homepage-view">
+						<!-- Link to single page -->
+						<a href="single.php?id=<?php echo $row['id']; ?>">
+							<img class="image-home" src="<?php echo $row['title_image']; ?>" alt="<?php echo $row['name']; ?>">
+						</a>
 						<!-- Caption is the title -->
-						<h2>
-							<?php echo $row['title']; ?>
+						<h2 class="home-title" >
+							<!-- More Obvious link to single page -->
+							<a class=home-link-title href="single.php?id=<?php echo $row['id']; ?>">
+								<?php echo $row['title']; ?>
+							</a>
 						</h2>
-				</div>
 
-					<p class='home-description'>
-						<?php echo $row['a_description']; ?></p>
-					<p class=read-more>
-						<!-- Grab ID -->
-						<a href="single.php?id=<?php echo $row['id']; ?>">Read More&hellip;</a>
-					</p>
-				</div>
+						<p class='home-subtitle'>
+							<?php echo $row['subtitle']; ?>
+						</p>
+					</div>
 
-			<?php
+					<?php
 				}
 
 				// Step 4: Release Returned Data
@@ -81,7 +66,8 @@
 				// Step 5: Close Database Connection
 				mysqli_close($connection);
 			?>
+			</div>
 		</div>
-	</div>
-</body>
-</html>
+	</body>
+
+	</html>
