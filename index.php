@@ -26,6 +26,7 @@
 	</head>
 
 	<body>
+
 		<div class="wrapper">
 			<!-- HEADER NAVIGATION SEARCH-->
 			<?php require "navigation.php";?>

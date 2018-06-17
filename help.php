@@ -14,8 +14,9 @@
 
     <!-- PUT A NAV / HEADER HERE -->
     <?php require "navigation.php";?>
-    <h1>HELP</h1>
-    <p>Search for the exact title or description of the recipe you want. It has to be verbatim.</p>
+    <h1 class="help-title">HELP</h1>
+    <p class="item-description">Search for the recipe you want. Find something you didn't know you needed, and leave not knowing where you are.</p>
+    <p class="signature"> - Off-White Apron</p>
 
 </body>
 

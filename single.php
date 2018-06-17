@@ -32,7 +32,9 @@
 
 	<head>
 		<?php require "header.php";?>
-		<title><?php echo $item['title'] ?></title>
+		<title>
+			<?php echo $item['title'] ?>
+		</title>
 	</head>
 
 	<body>
@@ -41,20 +43,8 @@
 
 
 		<div class="wrapper">
-			<ul class="navigation">
-				<li>
-					<a href="index.php">HOME</a>
-				</li>
-				
-				<li>
-					<a class=help-link href="help.php">HELP</a>
-				</li>
-			</ul>
-
-			<form class="search-bar" action="search.php" method="POST">
-				<input type="text" name="search" placeholder="Search....">
-				<button type="submit" name="submit-search">Search</button>
-			</form>
+			<!-- HEADER NAVIGATION SEARCH-->
+			<?php require "navigation.php";?>
 
 			<div class="single-wrapper">
 				<!--   DISH TITLE      DISH TITLE      DISH TITLE      DISH TITLE      DISH TITLE   -->
@@ -82,11 +72,13 @@
 
 						</div>
 						<!--      INGREDIENTS CAPTION     INGREDIENTS CAPTION     INGREDIENTS CAPTION     INGREDIENTS CAPTION    -->
-						<p class='single-ingredient-caption'>
+						<div class='single-ingredient-caption'>
 							<?php echo $item['ingredient_description']; ?>
-						</p>
+						</div>
 
 						<!-- DESCRIPTIONS      DESCRIPTIONS      DESCRIPTIONS      DESCRIPTIONS      DESCRIPTIONS      -->
+						<h3 class="description-title">Guess What?</h3>
+
 						<p class=item-description>
 							<?php echo $item['a_description']; ?>
 						</p>
@@ -94,22 +86,40 @@
 						<!-- INSTRUCTIONS     INSTRUCTIONS     INSTRUCTIONS     INSTRUCTIONS       -->
 						<div>
 							<ul class="instructions-list">
-								<li>
+
+								<h3 class="steps-title">1</h3>
+								<img class="single-image-ingredient" src="<?php echo $item['instructions_image_1']; ?>" alt="<?php echo $row['name']; ?>">
+								<li class="instruction-text">
 									<?php echo $item['instructions_1']; ?>
 									<li>
-										<li>
+
+										<h3 class="steps-title">2</h3>
+										<img class="single-image-ingredient" src="<?php echo $item['instructions_image_2']; ?>" alt="<?php echo $row['name']; ?>">
+										<li class="instruction-text">
 											<?php echo $item['instructions_2']; ?>
 											<li>
-												<li>
+
+												<h3 class="steps-title">3</h3>
+												<img class="single-image-ingredient" src="<?php echo $item['instructions_image_3']; ?>" alt="<?php echo $row['name']; ?>">
+												<li class="instruction-text">
 													<?php echo $item['instructions_3']; ?>
 													<li>
-														<li>
+
+														<h3 class="steps-title">4</h3>
+														<img class="single-image-ingredient" src="<?php echo $item['instructions_image_4']; ?>" alt="<?php echo $row['name']; ?>">
+														<li class="instruction-text">
 															<?php echo $item['instructions_4']; ?>
 															<li>
-																<li>
+
+																<h3 class="steps-title">5</h3>
+																<img class="single-image-ingredient" src="<?php echo $item['instructions_image_5']; ?>" alt="<?php echo $row['name']; ?>">
+																<li class="instruction-text">
 																	<?php echo $item['instructions_5']; ?>
 																	<li>
-																		<li>
+
+																		<h3 class="steps-title">6</h3>
+																		<img class="single-image-ingredient" src="<?php echo $item['instructions_image_6']; ?>" alt="<?php echo $row['name']; ?>">
+																		<li class="instruction-text">
 																			<?php echo $item['instructions_6']; ?>
 																			<li>
 							</ul>

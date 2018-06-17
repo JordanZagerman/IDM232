@@ -11,15 +11,15 @@
         <title>Off White Apron</title>
     </head>
 
-        <body>
-            <!-- PUT A NAV / HEADER HERE -->
-            <?php require "navigation.php";?>
-            <h1 class="search-title">Findings</h1>
+    <body>
+        <!-- PUT A NAV / HEADER HERE -->
+        <?php require "navigation.php";?>
+        <h1 class="search-title">Findings</h1>
 
-            <!-- All Search Results appear here -->
-            <div class="results-container">
+        <!-- All Search Results appear here -->
+        <div class="grid">
 
-                <?php
+            <?php
 
             if (isset($_POST['submit-search'])) {
                 $table = "projects";
@@ -40,6 +40,7 @@
                 OR instructions_4 LIKE '%$search_text%'
                 OR instructions_5 LIKE '%$search_text%'
                 OR instructions_6 LIKE '%$search_text%'
+                OR tag LIKE '%$search_text%'
                 ";
     
                 $result = mysqli_query($connection, $sql);
@@ -49,13 +50,28 @@
                 // If there are any Results
                 if ($queryResult > 0) {
                     while ($row=mysqli_fetch_assoc($result)) {
-                    echo "<div class = 'article-box'>
-                    <h3>".$row['title']."</h3>
-                    <p>".$row['a_description']."</p>
-                    <p>".$row['subtitle']."</p>
-                    <p>".$row['id']."</p>
-                    </div>";
-                    echo $row['title'];
+                        ?>
+
+                <div class="homepage-view">
+                    <!-- Link to single page -->
+                    <a href="single.php?id=<?php echo $row['id']; ?>">
+                        <img class="image-home" src="<?php echo $row['title_image']; ?>" alt="<?php echo $row['name']; ?>">
+                    </a>
+                    <!-- Caption is the title -->
+                    <h2 class="home-title">
+                        <!-- More Obvious link to single page -->
+                        <a class=home-link-title href="single.php?id=<?php echo $row['id']; ?>">
+                            <?php echo $row['title']; ?>
+                        </a>
+                    </h2>
+
+                    <p class='home-subtitle'>
+                        <?php echo $row['subtitle']; ?>
+                    </p>
+                </div>
+
+
+                <?php
                     }
 
                     // No Results
@@ -67,7 +83,7 @@
                         ?>
 
 
-            </div>
-        </body>
+        </div>
+    </body>
 
     </html>
